@@ -19,7 +19,11 @@ export const MyLocalFonts = () => {
           placeholder="Search"
           onChange={(e) =>
             setFilteredFonts(
-              localFonts.filter((x) => x.includes(e.target.value))
+              localFonts.filter((x) =>
+                x
+                  .toLocaleLowerCase()
+                  .includes(e.target.value.toLocaleLowerCase())
+              )
             )
           }
           icon={<IconSearch />}
