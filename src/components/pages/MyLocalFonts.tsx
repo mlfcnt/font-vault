@@ -1,12 +1,7 @@
 import { Container, Input, ScrollArea, Text, Title } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { useLocalFonts } from "../../rust-commands/local-fonts";
-import { LocalFontName } from "../../types";
 import { IconSearch } from "@tabler/icons-react";
-
-type Props = {
-  localFonts: LocalFontName[];
-};
 
 export const MyLocalFonts = () => {
   const { data: localFonts = [] } = useLocalFonts();
@@ -28,7 +23,6 @@ export const MyLocalFonts = () => {
             )
           }
           icon={<IconSearch />}
-          clea
         />
       </Container>
 
