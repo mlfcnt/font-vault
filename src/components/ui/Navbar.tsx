@@ -21,7 +21,7 @@ export const Navbar = ({ opened, activeNavLink, setActiveNavLink }: Props) => {
       p="xs"
       hiddenBreakpoint="sm"
       hidden={!opened}
-      width={{ sm: 200, lg: 300 }}
+      width={{ sm: 250, lg: 250 }}
     >
       <Box w={240}>
         <NavLink
@@ -29,7 +29,7 @@ export const Navbar = ({ opened, activeNavLink, setActiveNavLink }: Props) => {
           description={`${deviceName || "..."} - ${os.toUpperCase()}`}
           icon={
             <Badge size="sm" variant="filled" color="blue">
-              {localFonts.length}
+              {123123123123}
             </Badge>
           }
           onClick={() => setActiveNavLink("my-local-fonts")}
@@ -37,7 +37,7 @@ export const Navbar = ({ opened, activeNavLink, setActiveNavLink }: Props) => {
         <NavLink
           label="My other devices"
           disabled
-          description="Coming soon"
+          description="Coming soon ™"
           onClick={() => setActiveNavLink("my-local-fonts")}
         />
       </Box>
