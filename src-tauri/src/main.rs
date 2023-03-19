@@ -5,15 +5,15 @@ use hostname;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn get_local_fonts() -> Vec<String> {
+fn get_local_fonts() -> Vec<(String, String)> {
     let system_source = SystemSource::new();
     let all_fonts = system_source.all_fonts().unwrap();
-    let mut local_fonts: Vec<String> = Vec::new();
+    let mut local_fonts: Vec<(String, String)> = Vec::new();
     for font in all_fonts {
-        // let family_name = font.load().unwrap().family_name();
         match font.load().unwrap().postscript_name() {
             Some(name) => {
-                local_fonts.push(name);
+                let family_name = font.load().unwrap().family_name();
+                local_fonts.push((name, family_name));
             }
             None => (),
         }

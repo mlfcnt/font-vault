@@ -15,7 +15,7 @@ type Props = {
 export const Navbar = ({ opened, activeNavLink, setActiveNavLink }: Props) => {
   const os = useOs();
   const { data: deviceName } = useDeviceName();
-  const { data: localFonts = [] } = useLocalFonts();
+  const { data: localFonts } = useLocalFonts();
   return (
     <MantineNavbar
       p="xs"
@@ -29,7 +29,7 @@ export const Navbar = ({ opened, activeNavLink, setActiveNavLink }: Props) => {
           description={`${deviceName || "..."} - ${os.toUpperCase()}`}
           icon={
             <Badge size="sm" variant="filled" color="blue">
-              {123123123123}
+              {localFonts?.count}
             </Badge>
           }
           onClick={() => setActiveNavLink("my-local-fonts")}
